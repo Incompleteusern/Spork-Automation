@@ -12,10 +12,11 @@ async def on_command_error(ctx, error):
         await ctx.send('You do not have the correct role for this command.')
 
 @bot.command(name='add', help='Adds your name for auto login')
-async def autoLogin(ctx, username, password):
+async def autoLogin(ctx, username, password, delete=True):
     addToFile('names.csv', [ctx.message.author, username, password])
     await ctx.send('Success! Your login has been recorded {}'.format(ctx.message.author.mention))
-    await message.delete()
+    if (delete):
+        await ctx.message.delete()
 
 @bot.command(name='run', help='auto logins all saved credentials and returns whether a button was pressed')
 @commands.has_role('admin')
