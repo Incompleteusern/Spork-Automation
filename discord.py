@@ -1,6 +1,7 @@
 # bot.py
 import discord
 from discord.ext import commands
+import main
 
 TOKEN = 'token'
 
@@ -20,7 +21,7 @@ async def autoLogin(ctx, username, password):
 @bot.command(name='run', help='auto logins all saved credentials and returns whether a button was pressed')
 @commands.has_role('admin')
 async def logins(ctx):
-    response = runLogins('names.csv')
+    response = main.runLogins('names.csv')
     await ctx.send(response)
 
 bot.run(TOKEN)
