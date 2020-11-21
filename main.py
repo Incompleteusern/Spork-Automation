@@ -2,9 +2,7 @@
 #i use this because i use juypter
 import nest_asyncio
 nest_asyncio.apply()
-import discord
 import csv
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
