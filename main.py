@@ -79,7 +79,7 @@ def runLogins(filename):
     for i in readCSV(filename):
         if (i[0] != 'discord'):
             response += f'\t-{i[0]}: '
-            sporkClient = SporkInstance('/Users/Royce/Spork automation/chromedriver', False, i)
+            sporkClient = SporkInstance('chromedriver.exe', False, i)
             succeeded = sporkClient.enter_credentials();
             if (succeeded):
                 response += sporkClient.click_join_button()
